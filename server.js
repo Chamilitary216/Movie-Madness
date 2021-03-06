@@ -11,11 +11,11 @@ app.use(express.json());
 
 const exphbs = require('express-handlebars');
 
-//app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-//app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
-//const routes = require('./controllers/catsController.js');
+const routes = require('./controllers/movies_controller.js');
 
-//app.use(routes);
+app.use(routes);
 
 app.listen(PORT, () => console.log(`App now listening at localhost:${PORT}`));
