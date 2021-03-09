@@ -1,13 +1,21 @@
-<div class = "container">
-    <h1> Search Movies and TV Shows </h1>
-
-    <form>
-        <div class = "form-group">
-            <input type= "text" id="inputValue">
+ <div class="container">
+      <h1>Welcome to Movie Search</h1>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Search..."
+          />
         </div>
 
-    <button type = "submit" id= "search"> Search </button>
+        <button type="submit" class="btn" id="search">
+          Search a movie
+        </button>
+      </form>
 
-    </form>
-
-</div>
+      <div id="movies-searchable"></div>
+      <div id="movies-container"></div>
+    </div>
