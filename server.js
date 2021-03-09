@@ -14,7 +14,7 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-//const routes = require('./controllers/movies_controller.js');
+const routes = require('./controllers/movies_controller.js');
 
 //app.use(routes);
 
