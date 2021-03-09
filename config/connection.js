@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
     port: 3306,
     user: 'root',
     password: process.env.db_pass,
-    database: 'tickets_db'
+    database: 'streamsearch_db'
     });
 
 connection.connect((err) => {
