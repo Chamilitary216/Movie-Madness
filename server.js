@@ -16,6 +16,6 @@ app.set('view engine', 'handlebars');
 
 const routes = require('./controllers/movies_controller.js');
 
-//app.use(routes);
+app.use(routes);
 
 app.listen(PORT, () => console.log(`App now listening at localhost:${PORT}`));

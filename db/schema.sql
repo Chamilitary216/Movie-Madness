@@ -3,7 +3,7 @@ CREATE DATABASE streamsearch_db;
 
 USE  streamsearch_db;
 
-CREATE TABLE service(
+CREATE TABLE services(
     id INTEGER AUTO_INCREMENT NOT NULL,
     netflix BOOLEAN,
     prime BOOLEAN,
@@ -14,14 +14,14 @@ CREATE TABLE service(
     PRIMARY KEY(id)
 );
 
-CREATE TABLE user(
+CREATE TABLE users(
     id INTEGER AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE media(
+CREATE TABLE medias(
     id INTEGER AUTO_INCREMENT NOT NULL,
     service VARCHAR(25),
     country VARCHAR(25),

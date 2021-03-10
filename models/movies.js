@@ -1,11 +1,30 @@
-const buttonElement = document.querySelector ("#search");
-const inputElement = document.querySelector ("#inputValue");
+//const Sequelize = require('sequelize');
 
-buttonElement.onclick = function(event) {
-    event.preventDefault();
-    const value = inputElement.value;
+//const sequelize = require('../config.js');
 
-    fetch(url)
-        .then
+/*const Service = sequelize.define('service', {
+    netflix: {
+        type: DataTypes.BOOLEAN
+    },
+    prime: {
+        type: DataTypes.BOOLEAN
+    },
+    disney: {
+        type: DataTypes.BOOLEAN
+    },
+    hbo: {
+        type: DataTypes.BOOLEAN
+    },
+    hulu: {
+        type: DataTypes.BOOLEAN
+    },
+    peacock: {
+        type: DataTypes.BOOLEAN
+    },
+)}
+    Service.sync();
 
-}
+
+
+*/
+
