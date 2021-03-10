@@ -1,6 +1,7 @@
 const buttonElement = document.querySelector("#search");
 const inputElement = document.querySelector("#inputValue");
 
+//Prevent page from refreshing after submit
 buttonElement.onclick = function (event) {
     event.preventDefault();
     const value = inputElement.value;
