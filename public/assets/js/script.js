@@ -7,6 +7,7 @@ const buttonElement = document.querySelector("#search");
 const inputElement = document.querySelector("#inputValue");
 const movieSearch = document.querySelector("#movie-search")
 
+//grabs movie backdrop images to display
 function movieSection (movies) {
     return movies.map((movie) => {
         return `
@@ -37,6 +38,7 @@ buttonElement.onclick = function (event) {
 
     const newUrl = url + "&query=" + value;
 
+    //gets movie data to add to the page
     fetch (newUrl)
     .then((res) => res.json())
     .then((data) => {
