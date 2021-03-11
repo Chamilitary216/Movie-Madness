@@ -1,11 +1,15 @@
+// Requires Dependencies
 const express = require('express');
 const connection = require('./config/connection');
-var path = require("path");
+const path = require('path');
 
+// Defines the port
 const PORT = process.env.PORT || 8080;
 
+// Sets express module as a variable.
 const app = express();
 
+// Sets the public directory as static.
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));

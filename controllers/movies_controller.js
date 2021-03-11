@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.put('/api/movies/:id', (req, res) => {
+    console.log('Got here')
     const condition = `id = ${req.params.id}`;
 
     console.log('condition', condition);

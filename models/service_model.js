@@ -36,7 +36,7 @@ const service = sequelize.define('service', {
 },
     {sequelize, timestamps: false}
 );
-   // Service.sync();
+    service.sync();
 
 
 
