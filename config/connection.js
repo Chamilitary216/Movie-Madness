@@ -1,6 +1,6 @@
-const mysql = ('mysql');
+const Sequelize = require('sequelize');
 
-const connection = mysql.createConnection({
+const sequelize = new Sequelize({
     host: 'localhost',
     port: 3306,
     user: 'root',
