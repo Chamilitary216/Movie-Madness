@@ -1,3 +1,4 @@
+// Requires our dependencies.
 const express = require ('express');
 const router = express.Router();
 const movies = require('../models/service_model');
@@ -13,6 +14,16 @@ router.get('/:id', async (req, res) => {
         res.status(404).send('404 Not Found');
     }
 });
+
+router.post('/', async (req, res) => {
+    const newService = sequelize.models.service.build({
+        netflix: false,
+        prime: false,
+        disney: false
+    })
+    newService.save();
+    res.status(200);
+})
 
 async function getById(req, res) {
 
