@@ -1,12 +1,87 @@
  <div class="container">
+    <header>
       <h1>Welcome to Stream Search</h1>
+      <p>In todays world of endless options of sreaming services, it may seem almost impossible to orginize what
+        programs are on what service. Stream Search is designed to help maximze efficency in navigating multiple 
+        services.
+      </p>
+    </header>
       <form>
         <div class="form-group">
-          <input type="text" id="inputValue">
-        </div>
+          <div class="preference-select">
+            <p>What are your genre preferences?</p>
+            <div class="pref">
+              <label for="romance">Romance</label>
+              <input type="checkbox" id="romance" checked>
+            </div>
 
-        <button type="submit" id="search">
-          Search a movie </button>
+            <div class="pref">
+              <label for="action">Action</label>
+              <input type="checkbox" id="action" checked>
+            </div>
+
+            <div class="pref">
+              <label for="drama">Drama</label>
+              <input type="checkbox" id="drama" checked>
+            </div>
+
+            <div class="pref">
+              <label for="comedy">Comedy</label>
+              <input type="checkbox" id="comedy" checked>
+            </div>
+
+            <div class="pref">
+              <label for="science-fiction">Science Fiction</label>
+              <input type="checkbox" id="science-fiction" checked>
+            </div>
+
+            <div class="pref">
+              <label for="documentay">Documentary</label>
+              <input type="checkbox" id="documentary" checked>
+            </div>
+
+            <div class="pref">
+              <label for="anime">Anime</label>
+              <input type="checkbox" id="Anime" checked>
+            </div>
+          </div>
+
+          <div class="user-services">
+            <p>What streaming services do you have?</p>
+            <div class="service">
+              <label for="netflix">Netflix</label>
+              <input type="checkbox" id="netflix" checked>
+            </div>
+
+            <div class="service">
+              <label for="prime">Amazon Prime</label>
+              <input type="checkbox" id="prime" checked>
+            </div>
+
+            <div class="service">
+              <label for="disney">Disney+</label>
+              <input type="checkbox" id="disney" checked>
+            </div>
+
+            <div class="service">
+              <label for="hbo">HBO Max</label>
+              <input type="checkbox" id="hbo" checked>
+            </div>
+
+            <div class="service">
+              <label for="hulu">Hulu</label>
+              <input type="checkbox" id="hulu" checked>
+            </div>            
+
+            <div class="service">
+              <label for="peacock">Peacock</label>
+              <input type="checkbox" id="peacock" checked>
+            </div>            
+          </div>
+
+        <input type="text" id="inputValue">
+        <button type="submit" id="search">Search a movie</button>
+
       </form>
 
     </div>
