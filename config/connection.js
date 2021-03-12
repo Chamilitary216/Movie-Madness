@@ -1,19 +1,25 @@
 const Sequelize = require('sequelize');
-
+require('dotenv').config();
+console.log(process.env.db_pass);
 const sequelize = new Sequelize({
     host: 'localhost',
     port: 3306,
-    user: 'root',
+    username: 'appuser',
     password: process.env.db_pass,
-    database: 'streamsearch_db'
+    database: 'streamsearch_db',
+    dialect: 'mysql'
     });
 
-connection.connect((err) => {
+/*const modelDefiners = [require('../models/service_model')];
+for(const modelDefiner of modelDefiners) {
+  modelDefiner(sequelize)
+}
+/*connection.connect((err) => {
   if (err) {
     console.error(`error connecting: ${err.stack}`);
     return;
   }
   console.log(`connected as id ${connection.threadId}`);
 });
-
-module.exports = connection;
+*/
+module.exports = sequelize;

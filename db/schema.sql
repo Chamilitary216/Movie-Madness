@@ -4,7 +4,7 @@ CREATE DATABASE streamsearch_db;
 
 USE  streamsearch_db;
 
-CREATE TABLE services(
+CREATE TABLE service(
     id INTEGER AUTO_INCREMENT NOT NULL,
     netflix BOOLEAN,
     prime BOOLEAN,
