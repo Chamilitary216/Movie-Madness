@@ -10,6 +10,7 @@ const movieSearch = document.querySelector("#movie-search")
 //grabs movie backdrop images to display
 function movieSection (movies) {
     return movies.map((movie) => {
+        if (movie.poster_path)
         return `
         <img src=${imgURL + movie.poster_path} data-movie-id = ${movie.id}/>
         `;
@@ -28,7 +29,7 @@ function createMovieContainer(movies) {
              <p id = "content-close">X</p>
         </div>
     `;
-
+    // Adds the above template to movie div
     movieElement.innerHTML = movieTemplate;
     return movieElement
 }
