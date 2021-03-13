@@ -21,13 +21,13 @@ passport.use(new LocalStrategy(
             // Validates username.
             if(!dbUser) {
                 return done(null, false, {
-                    message: 'Incorrect Username!!!'
+                    message: 'Incorrect Login!!!'
                 });
             }
             // Validates password.
             else if(!dbUser.validPassword(password)) {
                 return done(null, false, {
-                    message: 'Incorrect Password!!!'
+                    message: 'Incorrect Login!!!'
                 });
             }
             // Returns the user if the above functions come back false.
