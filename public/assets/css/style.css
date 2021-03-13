@@ -39,6 +39,17 @@ img:hover {
     cursor: pointer;
     margin-left: 0 50px;
 }
+
+.content {
+    border: 1px solid maroon;
+    height: 200px;
+    display: none;
+
+}
+.content-display {
+    display: block;
+}
+
 * {
     margin: 0px;
     padding: 0px;
