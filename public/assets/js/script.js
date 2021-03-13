@@ -7,8 +7,10 @@ const buttonElement = document.querySelector("#search");
 const inputElement = document.querySelector("#inputValue");
 const movieSearch = document.querySelector("#movie-search")
 
+//grabs movie backdrop images to display
 function movieSection (movies) {
     return movies.map((movie) => {
+        if (movie.poster_path)
         return `
         <img src=${imgURL + movie.poster_path} data-movie-id = ${movie.id}/>
         `;
@@ -27,7 +29,7 @@ function createMovieContainer(movies) {
              <p id = "content-close">X</p>
         </div>
     `;
-
+    // Adds the above template to movie div
     movieElement.innerHTML = movieTemplate;
     return movieElement
 }
@@ -37,6 +39,7 @@ buttonElement.onclick = function (event) {
 
     const newUrl = url + "&query=" + value;
 
+    //gets movie data to add to the page
     fetch (newUrl)
     .then((res) => res.json())
     .then((data) => {

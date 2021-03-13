@@ -1,8 +1,44 @@
+/* Styling for Movies section */
+
+body {
+    background-image: url("../images/background.jpg");
+}
+
 #search {
     color: white;
     background: teal;
 }
 
+#movie-search {
+    margin-top: 25px;
+}
+
+h1 {
+    color: teal;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+    color:yellowgreen
+}
+
+section {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+section img {
+    width: 250px;
+}
+
+img:hover {
+    transform: scale(1.5);
+    transition: 0.4s;
+    cursor: pointer;
+    margin-left: 0 50px;
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -10,6 +46,7 @@
 
 header {
     border: 2px black solid;
+    color: white;
     border-radius: 15px;
     padding: 2%;
     margin: 2%;
@@ -26,4 +63,9 @@ h1 {
 
 input {
     border: 10px black solid;
+}
+
+
+.preference-select {
+    color: white;
 }
