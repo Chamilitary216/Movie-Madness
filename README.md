@@ -28,7 +28,7 @@
   
   ## Questions.
   ### GitHub:
-  [Chamilitary216](https://github.com/RryanWilsonW/stream_search.git) [RryanWilsonW](https://github.com/RryanWilsonW/stream_search.git) [MRM9933](https://github.com/RryanWilsonW/stream_search.git)
+  [Chamilitary216](https://github.com/Chamilitary216) [RryanWilsonW](https://github.com/RryanWilsonW) [MRM9933](https://github.com/MRM9933)
   
   ### Email:
   ChrisCurryCodez@gmail.com
