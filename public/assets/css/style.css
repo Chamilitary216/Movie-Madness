@@ -4,6 +4,10 @@ body {
     background-image: url("../images/background.jpg");
 }
 
+.container {
+    background: black;
+}
+
 #search {
     color: white;
     background: teal;
@@ -41,10 +45,18 @@ img:hover {
 }
 
 .content {
+    margin: 10px;
     border: 1px solid maroon;
-    height: 200px;
+    align-items: center;
     display: none;
+    flex-wrap: wrap;
 
+
+}
+
+.content div {
+    display: flex;
+    justify-content: space-around;
 }
 .content-display {
     display: block;
