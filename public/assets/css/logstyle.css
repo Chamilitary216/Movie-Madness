@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url("../images/YeJrNXm-high-def-background-pictures.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.loginarea {
+    height: 420px;
+    width: 320px;
+}
