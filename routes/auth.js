@@ -27,5 +27,8 @@ module.exports = function(app, passport) {
         res.redirect('/login')
     }
 
+    //New routes go here....
+    //example- app.get('/somePage', isLoggedIn, somePage_contorller.blah);
+
 }
 
