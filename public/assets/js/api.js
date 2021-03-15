@@ -24,3 +24,15 @@ function searchMovie(value) {
     const url = generateUrl(path) + "&query=" + value;
     requestMovies(url, renderSearchMovies, seekError);
 }
+
+function upComingMovie() {
+    const path = "/movie/upcoming";
+    const url = generateUrl(path);
+    requestMovies(url, renderMovie, seekError);
+}
+
+function popularMovie() {
+    const path = "/movie/popular";
+    const url = generateUrl(path);
+    requestMovies(url, renderMovie, seekError);
+}

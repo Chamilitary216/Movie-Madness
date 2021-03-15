@@ -19,6 +19,11 @@ body {
 #movie-search {
     margin-top: 25px;
     margin-left: 20px;
+    margin-bottom: 60px;
+}
+
+.movie{
+    margin-bottom: 0px
 }
 
 h1 {

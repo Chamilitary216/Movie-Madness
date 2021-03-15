@@ -1,6 +1,7 @@
 const buttonElement = document.querySelector("#search");
 const inputElement = document.querySelector("#inputValue");
 const movieSearch = document.querySelector("#movie-search");
+const movieContainer = document.querySelector("#movie-container")
 
 
 
@@ -36,6 +37,13 @@ function renderSearchMovies(data) {
     const movies = data.results;
     const movieBlock = createMovieContainer(movies);
     movieSearch.appendChild(movieBlock)
+    
+}
+
+function renderMovie(data) {
+    const movies = data.results;
+    const movieBlock = createMovieContainer(movies);
+    movieContainer.appendChild(movieBlock)
     console.log ("Data: ", data);
 }
 // Function to search movies
@@ -114,3 +122,6 @@ document.onclick = function(event) {
         content.classList.remove("content-display");
     }
 }
+
+upComingMovie();
+popularMovie()
