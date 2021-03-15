@@ -15,11 +15,12 @@ function movieSection (movies) {
     })
 }
 
-function createMovieContainer(movies) {
+function createMovieContainer(movies, title = "") {
     const movieElement = document.createElement("div");
     movieElement.setAttribute("class", "movie");
     
     const movieTemplate = `
+    <h2>${title}</h2>
         <section class = "section">
             ${movieSection(movies)}
         </section>
@@ -42,7 +43,7 @@ function renderSearchMovies(data) {
 
 function renderMovie(data) {
     const movies = data.results;
-    const movieBlock = createMovieContainer(movies);
+    const movieBlock = createMovieContainer(movies, this.title);
     movieContainer.appendChild(movieBlock)
     console.log ("Data: ", data);
 }

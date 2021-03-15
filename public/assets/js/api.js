@@ -28,11 +28,13 @@ function searchMovie(value) {
 function upComingMovie() {
     const path = "/movie/upcoming";
     const url = generateUrl(path);
-    requestMovies(url, renderMovie, seekError);
+    const render = renderMovie.bind({ title: "Upcoming Movies" })
+    requestMovies(url, render, seekError);
 }
 
 function popularMovie() {
     const path = "/movie/popular";
     const url = generateUrl(path);
-    requestMovies(url, renderMovie, seekError);
+    const render = renderMovie.bind({ title: "Popular Movies" })
+    requestMovies(url, render, seekError);
 }
