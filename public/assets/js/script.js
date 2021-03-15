@@ -1,17 +1,8 @@
-
-const api_key = "146e2e585bf1f3f8c3a01f3d02ef066b";
-const url = 'http://api.themoviedb.org/3/search/movie?api_key=146e2e585bf1f3f8c3a01f3d02ef066b';
-const imgURL = "https://image.tmdb.org/t/p/w500/"
-
 const buttonElement = document.querySelector("#search");
 const inputElement = document.querySelector("#inputValue");
 const movieSearch = document.querySelector("#movie-search");
+const movieContainer = document.querySelector("#movie-container")
 
-//Creates a dynamic URL
-function generateUrl(path) {
-    const url = `http://api.themoviedb.org/3${path}?api_key=146e2e585bf1f3f8c3a01f3d02ef066b`;
-    return url;
-}
 
 
 //grabs movie backdrop images to display
@@ -24,11 +15,12 @@ function movieSection (movies) {
     })
 }
 
-function createMovieContainer(movies) {
+function createMovieContainer(movies, title = "") {
     const movieElement = document.createElement("div");
     movieElement.setAttribute("class", "movie");
     
     const movieTemplate = `
+    <h2>${title}</h2>
         <section class = "section">
             ${movieSection(movies)}
         </section>
@@ -46,29 +38,34 @@ function renderSearchMovies(data) {
     const movies = data.results;
     const movieBlock = createMovieContainer(movies);
     movieSearch.appendChild(movieBlock)
-    console.log ("Data: ", data);
+    
 }
 
-//URL Search
+function renderMovie(data) {
+    const movies = data.results;
+    const movieBlock = createMovieContainer(movies, this.title);
+    movieContainer.appendChild(movieBlock)
+    console.log ("Data: ", data);
+}
+// Function to search movies
+
+function seekError(error) {
+    console.log ("Error: ", error)
+}
+
+//Search Button onClick
 buttonElement.onclick = function (event) {
     event.preventDefault();
     const value = inputElement.value;
-    const path = "/search/movie";
-    const newUrl = generateUrl(path) + "&query=" + value;;
-
-    //gets movie data to add to the page
-    fetch (newUrl)
-    .then((res) => res.json())
-    .then(renderSearchMovies)
-    .catch((error) => {
-        console.log("Erro: ", error);
-    });
+    searchMovie(value);
+    
 
     //Empties the search field after every search
     inputElement.value = "";
     console.log("Value: ", value);
 }
 
+// Create the iFrame
 function createiFrame(video) {
     const iframe = document.createElement("iframe");
     iframe.src = `https://www.youtube.com/embed/${video.key}`;
@@ -78,6 +75,24 @@ function createiFrame(video) {
 
     return iframe;
 
+}
+
+function createVideoTemp (data, content) {
+    //Drops existings videos in container and adds new ones
+    content.innerHTML = '<p id="content-close">X</p>';
+    console.log("Videos: ", data)
+                const videos = data.results;
+                //Loops so we don't get more than 4 videos
+                const length = videos.length > 4 ? 4 : videos.length;
+                const iframeDiv = document.createElement ("div");
+
+                for (let i = 0; i < videos.length; i++) {
+                    const video = videos[i];
+                    const iframe = createiFrame(video);
+                    iframeDiv.appendChild(iframe);
+                    content.appendChild(iframeDiv);
+
+                }
 }
 
 document.onclick = function(event) {
@@ -97,20 +112,7 @@ document.onclick = function(event) {
          
         fetch(url)
             .then((res) => res.json())
-            .then((data) => {
-                console.log("Videos: ", data)
-                const videos = data.results;
-                const length = videos.length > 4 ? 4 : videos.length;
-                const iframeDiv = document.createElement ("div");
-
-                for (let i = 0; i < videos.length; i++) {
-                    const video = videos[i];
-                    const iframe = createiFrame(video);
-                    iframeDiv.appendChild(iframe);
-                    content.appendChild(iframeDiv);
-
-                }
-            })
+            .then((data) => createVideoTemp(data, content))
              .catch((error) => {
               console.log("Error: ", error);
     });
@@ -121,3 +123,6 @@ document.onclick = function(event) {
         content.classList.remove("content-display");
     }
 }
+
+upComingMovie();
+popularMovie()

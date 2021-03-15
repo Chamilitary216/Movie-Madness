@@ -1,12 +1,15 @@
 /* Styling for Movies section */
 
-body {
-    background-image: url("../images/background.jpg");
+.container {
+    background-color: black;
+    background-size: 100% 100%
 }
 
-.container {
-    background: black;
+body {
+    background-color: black;
+    
 }
+
 
 #search {
     color: white;
@@ -15,15 +18,17 @@ body {
 
 #movie-search {
     margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 60px;
+}
+
+.movie{
+    margin-bottom: 0px
 }
 
 h1 {
     color: teal;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-span {
-    color:yellowgreen
 }
 
 section {
@@ -46,7 +51,6 @@ img:hover {
 
 .content {
     margin: 10px;
-    border: 1px solid maroon;
     align-items: center;
     display: none;
     flex-wrap: wrap;
@@ -58,17 +62,15 @@ img:hover {
     display: flex;
     justify-content: space-around;
 }
+
 .content-display {
     display: block;
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
 
 header {
     border: 2px black solid;
+    background-size:cover;
     color: white;
     border-radius: 15px;
     padding: 2%;
@@ -85,10 +87,11 @@ h1 {
 
 
 input {
-    border: 10px black solid;
+    border: 3px black solid;
 }
 
 
 .preference-select {
     color: white;
 }
+
