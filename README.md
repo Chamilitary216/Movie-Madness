@@ -1,4 +1,4 @@
-# Stream_Search 
+# Movie Mania
 
   ![License](https://img.shields.io/static/v1?label=License&message=none&color=green)
 
@@ -15,7 +15,7 @@
   ![walkthrough]("./")
 
   ### Usage:
-  Use this website to search for a movie and/or TV series to watch.  There is also an option to the site to pick a random movie based on user preference.
+  Use this to watch movie trailers.  Don't know what to watch? Set your favorite movie preference and let us pick a title for you!
 
   ### Contributions:
   
@@ -28,7 +28,7 @@
   
   ## Questions.
   ### GitHub:
-  [Chamilitary216, RryanWilsonW, MRM9933](https://github.com/RryanWilsonW/stream_search.git)
+  [Chamilitary216](https://github.com/Chamilitary216) [RryanWilsonW](https://github.com/RryanWilsonW) [MRM9933](https://github.com/MRM9933)
   
   ### Email:
   ChrisCurryCodez@gmail.com

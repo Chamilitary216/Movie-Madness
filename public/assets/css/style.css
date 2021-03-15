@@ -4,6 +4,10 @@ body {
     background-image: url("../images/background.jpg");
 }
 
+.container {
+    background: black;
+}
+
 #search {
     color: white;
     background: teal;
@@ -39,6 +43,25 @@ img:hover {
     cursor: pointer;
     margin-left: 0 50px;
 }
+
+.content {
+    margin: 10px;
+    border: 1px solid maroon;
+    align-items: center;
+    display: none;
+    flex-wrap: wrap;
+
+
+}
+
+.content div {
+    display: flex;
+    justify-content: space-around;
+}
+.content-display {
+    display: block;
+}
+
 * {
     margin: 0px;
     padding: 0px;
