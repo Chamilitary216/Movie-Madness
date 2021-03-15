@@ -1,3 +1,4 @@
+/*
 const Sequelize = require('sequelize');
 require('dotenv').config();
 console.log(process.env.db_pass);
@@ -21,5 +22,6 @@ for(const modelDefiner of modelDefiners) {
   }
   console.log(`connected as id ${connection.threadId}`);
 });
-*/
+
 module.exports = sequelize;
+*/

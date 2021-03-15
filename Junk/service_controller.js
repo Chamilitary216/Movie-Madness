@@ -1,11 +1,10 @@
 // Requires our dependencies.
 const express = require ('express');
 const router = express.Router();
-const movies = require('../models/service_model');
+const movies = require('../Junk/service_model');
 const sequelize = require('../config/connection');
 
 router.get('/:id', async (req, res) => {
-    console.log(req.params.id)
     const userServices = await sequelize.models.service.findByPk(req.params.id)
     if (userServices) {
         res.status(200).json(userServices);

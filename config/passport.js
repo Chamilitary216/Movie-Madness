@@ -1,49 +1,107 @@
-// Requires our dependencies.
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const bCrypt = require('bcrypt-nodejs');
 
-// Requires our models directory.
-const db = require("../models");
+module.exports = function(passport, user) {
+    const User = user;
+    const LocalStrategy = require('passport-local').Strategy;
 
-// This instantiates that our login requirements are username and password.
-passport.use(new LocalStrategy(
-    {
-        usernameField: 'email'
+    //Local Sign Up
+    passport.use('local-signup', new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
     },
-    function(email, password, done) {
-        // Finds credentials based off of email
-        db.User.findOne({
-            where: {
-                email: email
+
+    function(req, email, password, done) {
+        const generateHash = function() {
+            const salt = bCrypt.genSaltSync(10);
+            const hash = bCrypt.hashSync(password, salt);
+            return hash;
+        };
+
+        User.findOne({ 
+            where: { 
+                email: email 
             }
-        //Defines functionality based on the credentials aquired from the user.
-        }).then(function(dbUser) {
-            // Validates username.
-            if(!dbUser) {
+        }).then(function (user) {
+            if (user) {
                 return done(null, false, {
-                    message: 'Incorrect Username!!!'
+                    message: 'Email taken'
+                })
+            } else
+            {
+                var password = generateHash(password);
+                var data = {
+                    email: email,
+                    password: password
+                };
+
+                User.create(data).then(function(newUser, created) {
+                    if (!newUser) {
+                        return done(null, false);
+                    }
+                    if (newUser) {
+                        return done(null, newUser);
+                    }
+                });
+                }
+            });
+    }));
+    
+    //Local Sign In
+    passport.use('local-signin', new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
+    },
+
+    function(req, email, password, done) {
+        const User = user;
+        const isValidPassword = function(userpass, password) {
+            const result = bCrypt.compareSync(password, userpass);
+            return result;
+        };
+
+        User.findOne({ 
+            where: { 
+                email: email 
+            }
+        }).then(function (user) {
+            if (!user) {
+                console.log('invalid user');
+                return done(null, false, {
+                    message: 'Invalid Login.'
+                });
+            } 
+            if (!isValidPassword(user.password, password)) {
+                console.log('invalid pw');
+                return done(null, false, {
+                    message: 'Invalid Login.'
                 });
             }
-            // Validates password.
-            else if(!dbUser.validPassword(password)) {
-                return done(null, false, {
-                    message: 'Incorrect Password!!!'
-                });
-            }
-            // Returns the user if the above functions come back false.
-            return done(null, dbUser);
+            const userInfo = user.get();
+            return done(null, userInfo);
+        }).catch(function(err) {
+            return done(null, false, {
+                message: 'Something went wrong'
+            });
         });
-    }
-));
+    }));
 
-// Boiler plate serialization and desserializationto help keep authentication state across HTTP requests.
-passport.serializeUser(function(user, cb) {
-    cb(null, user);
-});
+    passport.serializeUser(function(user, done){
+        done(null, user.id);
+    });
+    
+    passport.deserializeUser(function(id, done){
+        User.findByPk(id).then(function(user){
+            if(user) {
+                const userinfo = user.get();
+                done(null,userinfo);
+            } else {
+                done(user.errors, null);
+            }
+        });
+    });
 
-passport.deserializeUser(function(user, cb) {
-    cb(null, obj);
-});
 
-// Exports our passport
-module.exports = passport;
+}
+

@@ -1,3 +1,4 @@
+/*
 const express = require ('express');
 
 const router = express.Router();
@@ -8,15 +9,18 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
+
+
 router.put('/api/movies/:id', (req, res) => {
     console.log('Got here')
     const condition = `id = ${req.params.id}`;
 
     console.log('condition', condition);
 
-    // movies.update({
+     movies.update({
 
-    // })
+     })
 })
 
 module.exports = router;
+*/
