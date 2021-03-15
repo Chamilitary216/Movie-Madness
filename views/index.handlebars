@@ -1,39 +1,102 @@
+ <div class="container">
+    <header>
+      <h1>Welcome to Stream <span>Search</span></h1>
+      <p>In todays world of endless options of sreaming services, it may seem almost impossible to orginize what
+        programs are on what service. Stream Search is designed to help maximze efficency in navigating multiple 
+        services.
+      </p>
+    </header>
+      <form>
+        <div class="form-group">
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
+          <div class="selection row">
+
+            <div class="preference-select col-md-6">
+
+              <p>What are your genre preferences?</p>
+
+              <div class="pref">
+                <label for="romance">Romance</label>
+                <input type="checkbox" id="romance" checked>
+              </div>
+
+              <div class="pref">
+                <label for="action">Action</label>
+                <input type="checkbox" id="action" checked>
+              </div>
+
+              <div class="pref">
+                <label for="drama">Drama</label>
+                <input type="checkbox" id="drama" checked>
+              </div>
+
+              <div class="pref">
+                <label for="comedy">Comedy</label>
+                <input type="checkbox" id="comedy" checked>
+              </div>
+
+              <div class="pref">
+                <label for="science-fiction">Science Fiction</label>
+                <input type="checkbox" id="science-fiction" checked>
+              </div>
+
+              <div class="pref">
+                <label for="documentay">Documentary</label>
+                <input type="checkbox" id="documentary" checked>
+              </div>
+
+              <div class="pref">
+                <label for="anime">Anime</label>
+                <input type="checkbox" id="anime" checked>
+              </div>
+            </div>
+
+            <div class="user-services col-md-6">
+              <p>What streaming services do you have?</p>
+              <div class="service">
+                <label for="netflix">Netflix</label>
+                <input type="checkbox" id="netflix" checked>
+              </div>
+
+              <div class="service">
+                <label for="prime">Amazon Prime</label>
+                <input type="checkbox" id="prime" checked>
+              </div>
+
+              <div class="service">
+                <label for="disney">Disney+</label>
+                <input type="checkbox" id="disney" checked>
+              </div>
+
+              <div class="service">
+                <label for="hbo">HBO Max</label>
+                <input type="checkbox" id="hbo" checked>
+              </div>
+
+              <div class="service">
+                <label for="hulu">Hulu</label>
+                <input type="checkbox" id="hulu" checked>
+              </div>            
+
+              <div class="service">
+                <label for="peacock">Peacock</label>
+                <input type="checkbox" id="peacock" checked>
+              </div>
+            </div>            
+          </div>
+        </div>
+
+        <div class="input-box row">
+          <input type="text" id="inputValue" class="col-md-6">
+          <button type="submit" id="search" class="col-md-6">Search a movie</button>
+        </div>
+      </form>
+
     </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
+
+    <div id = "movie-search">
+        <div class = "movie">
+     </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-
-</body>
-
-</html>
+<script src="assets/js/script.js"></script>    

@@ -1,4 +1,4 @@
-const {Sequelize, DataTypes} = require('sequelize');
+/*const {Sequelize, DataTypes} = require('sequelize');
 
 const sequelize = require('../config/connection');
 
@@ -40,3 +40,4 @@ const service = sequelize.define('service', {
 
 
 
+*/

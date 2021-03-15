@@ -1,17 +1,20 @@
-// This is a boiler plate index.js file, used to link the models of the directory.
+1// This is a boiler plate index.js file, used to link the models of the directory.
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+require('dotenv').config();
+const sequelize = new Sequelize({
+  host: 'localhost',
+  port: 3306,
+  username: 'appuser',
+  password: process.env.db_pass,
+  database: 'streamsearch_db',
+  dialect: 'mysql'
+});
 let db = {};
 
-if (config.use_env_variable) {
-  let sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  let sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
 
 fs
   .readdirSync(__dirname)
@@ -19,7 +22,8 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
+    //var model = sequelize['import'](path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
     db[model.name] = model;
   });
 
