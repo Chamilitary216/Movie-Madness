@@ -44,3 +44,10 @@ function popularMovie() {
     const render = renderMovie.bind({ title: "Popular Movies" })
     requestMovies(url, render, seekError);
 }
+
+function popularTV() {
+    const path = "/tv/popular";
+    const url = generateUrl(path);
+    const render = renderMovie.bind({ title: "Popular TV Shows" })
+    requestMovies(url, render, seekError);
+}
