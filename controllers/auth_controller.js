@@ -1,4 +1,4 @@
-
+// Will export functions with the res to render our login pages.
 module.exports.signup = function(req, res) {
     res.render('signup');
 }
