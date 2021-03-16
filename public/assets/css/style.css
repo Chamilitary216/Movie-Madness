@@ -4,15 +4,20 @@
 
 /* Styling for Text */
 
-.header {
+header {
     position: relative;
-    width: 600px;
+    width: 1000px;
     height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgb(45, 45, 45);
 }
 
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
 /* Styling for Checkbox */
 
 * {
@@ -40,11 +45,15 @@
     flex-direction: column;
     justify-content: center;
     top: 70%;
+    
   }
   
   .container .group {
     padding: 8px 48px;
     margin: 2px;
+    color:white;
+    background: rgb(45, 45, 45);
+    font-family: 'Roboto', sans-serif;
   }
   
   input[type="checkbox"] {
@@ -143,6 +152,8 @@
 
   h2 {
       color:rgb(247, 246, 243);
+      font-family: 'Roboto', sans-serif;
+      background: rgb(164, 164, 164);
   }
 
   .section {
