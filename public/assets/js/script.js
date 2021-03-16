@@ -124,5 +124,6 @@ document.onclick = function(event) {
     }
 }
 
+nowPlayingMovie();
 upComingMovie();
-popularMovie()
+popularMovie();

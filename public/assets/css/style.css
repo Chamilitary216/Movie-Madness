@@ -1,97 +1,177 @@
-/* Styling for Movies section */
-
-.container {
-    background-color: black;
-    background-size: 100% 100%
+.logo {
+    background: url("../images/logo.jpg");
 }
 
-body {
-    background-color: black;
-    
-}
+/* Styling for Text */
 
-
-#search {
-    color: white;
-    background: teal;
-}
-
-#movie-search {
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-bottom: 60px;
-}
-
-.movie{
-    margin-bottom: 0px
-}
-
-h1 {
-    color: teal;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-section {
+.header {
+    position: relative;
+    width: 600px;
+    height: 300px;
     display: flex;
-    width: 100%;
-    overflow-x: auto;
-
-}
-
-section img {
-    width: 250px;
-}
-
-img:hover {
-    transform: scale(1.5);
-    transition: 0.4s;
-    cursor: pointer;
-    margin-left: 0 50px;
-}
-
-.content {
-    margin: 10px;
+    justify-content: center;
     align-items: center;
-    display: none;
-    flex-wrap: wrap;
-
-
 }
 
-.content div {
+/* Styling for Checkbox */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url("../images/moviea.jpg");
+
+  }
+  
+  h1 {
+    margin: 16px 0;
+    border-left: 5px solid #e74c3c;
+    padding-left: 16px;
+    color: burlywood;
+  }
+
+  
+  .container {
+    padding: 48px;
+    height: 100vh;
     display: flex;
-    justify-content: space-around;
-}
+    flex-direction: column;
+    justify-content: center;
+    top: 70%;
+  }
+  
+  .container .group {
+    padding: 8px 48px;
+    margin: 2px;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  label {
+    position: relative;
+  }
+  
+  label::before {
+    content: "";
+    background: url("../images/iconfinder-icon.svg");
+    background-position: center;
+    background-size: contain;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: -44px;
+    top: -8px;
+  
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+  }
+  
+  input[type="checkbox"]:checked + label::before {
+    transform: scale(1) rotateZ(0deg);
+  }
+  
+  label::after {
+    content: "";
+    border: 2px solid #27ae60;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -42px;
+    top: -6px;
+    border-radius: 50%;
+  }
 
-.content-display {
-    display: block;
-}
+  /* Styling for Search bar */
 
+  .box {
+      position: absolute;
+      top: 87%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2c3e50;
+      height: 60px;
+      padding: 10px;
+      border-radius: 40px;
+  }
 
-header {
-    border: 2px black solid;
-    background-size:cover;
-    color: white;
-    border-radius: 15px;
-    padding: 2%;
-    margin: 2%;
-    text-align: center;
-}
+  .box:hover {
+      box-shadow: 0 0 24px #2c3e50, 0 0 24px rgba(0, 0, 0, 0.8);
+  }
 
-h1 {
-    text-align: center;
-    font-size: 36px;
-    padding: 2%;
-}
+  .box:hover > input {
+      width: 240px;
+      padding: 0 6px;
+  }
 
+  .box:hover > #search{
+      background: white;
+      color: grey;
+  }
 
+  #search {
+      color: red;
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: darkgray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.6s;
+      border: none;
+  }
 
-input {
-    border: 3px black solid;
-}
+  .input {
+      border: none;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      color: white;
+      font-size: 16px;
+      transition: 0.6s;
+      line-height: 40px;
+      width: 0px;
+  }
 
+  /* Movie picture Styling */
 
-.preference-select {
-    color: white;
-}
+  .section {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+  }
 
+  section img {
+      width: 300px;
+      transition: 250ms all;
+
+  }
+
+  img:hover {
+      margin-left: 0 40px;
+      transform: scale(1.2);
+      transition: 0.4s;
+      cursor: pointer;
+  }
+
+  .content {
+      display: none;
+  }
+
+  .content div {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 10px;
+  }
+
+  .content-display {
+      display: block;
+  }
