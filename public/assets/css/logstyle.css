@@ -11,3 +11,8 @@ body {
     height: 420px;
     width: 320px;
 }
+
+.auth-btn {
+    color: white !important;
+    border: green 2px solid !important;
+}

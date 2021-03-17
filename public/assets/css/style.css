@@ -63,7 +63,7 @@ p {
   label {
     position: relative;
   }
-  
+
   label::before {
     content: "";
     background: url("../images/iconfinder-icon.svg");
@@ -254,5 +254,10 @@ p {
     color: #fff;
     font-size: 16px;
   }
+
+  .auth-btn {
+    color: white !important;
+    border: green 2px solid !important;
+}
 
   
