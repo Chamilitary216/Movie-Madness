@@ -6,11 +6,11 @@ const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config();
 const sequelize = new Sequelize({
-  host: 'localhost',
+  host: process.env.CLEARDB_DATABASE_URL || 'localhost',
   port: 3306,
-  username: 'appuser',
-  password: process.env.db_pass,
-  database: 'streamsearch_db',
+  username: process.env.USER || 'appuser',
+  password: process.env.PASS || process.env.db_pass,
+  database: process.env.DB || 'streamsearch_db',
   dialect: 'mysql'
 });
 let db = {};
