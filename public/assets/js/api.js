@@ -5,7 +5,7 @@ const imgURL = "https://image.tmdb.org/t/p/w500/"
 
 //Creates a dynamic URL
 function generateUrl(path) {
-    const url = `http://api.themoviedb.org/3${path}?api_key=146e2e585bf1f3f8c3a01f3d02ef066b`;
+    const url = `https://api.themoviedb.org/3${path}?api_key=146e2e585bf1f3f8c3a01f3d02ef066b`;
     return url;
 }
 
