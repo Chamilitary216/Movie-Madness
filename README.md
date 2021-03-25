@@ -7,12 +7,11 @@
   
     
   ## Description:
-  Using a mysql database and inquirer...
+  A website that searches movies, displays upcoming movies, popular and tending.
 
   ### Installation:
-  Open the terminal and run node logic.js after installing mysql and inquirer.
+  In the search field type in the name of a movie.  Click on the movie to view movies trailor
 
-  ![walkthrough]("./")
 
   ### Usage:
   Use this to watch movie trailers.  Don't know what to watch? Set your favorite movie preference and let us pick a title for you!
